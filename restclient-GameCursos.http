@@ -1,0 +1,19 @@
+GET http://localhost:5159/Producto
+Accept: application/json
+
+
+GET http://localhost:5159/api/Producto/1
+Accept: application/json
+
+POST http://localhost:5159/api/Producto HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "Curso de Aspecto visual de videojuegos",
+    "descripcion": "Aprende a diseñar los aspectos visuales de los viejuegos 2D y 3D, crea tus escenarios.",
+    "precio": 200,
+    "porcentajeDescuento": 12,
+    "imageName": "https://drive.google.com/file/d/1pWboU4Gt3DftxYnAZYJTKQF6ONI5OKog/view?usp=drive_link	",
+    "status": "Activo"
+}

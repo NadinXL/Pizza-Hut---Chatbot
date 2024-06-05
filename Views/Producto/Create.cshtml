@@ -1,0 +1,120 @@
+@model GameCursos.Models.Producto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear Nuevo Producto</h1>
+
+<hr />
+<div id="contenedor" class="text-left">
+<div class="row">
+    <div class="col-md-4">
+        <form id="formulario" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Precio" class="control-label"></label>
+                <input asp-for="Precio" class="form-control" />
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PorcentajeDescuento" class="control-label"></label>
+                <input asp-for="PorcentajeDescuento" class="form-control" />
+                <span asp-validation-for="PorcentajeDescuento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageName" class="control-label"></label>
+                <input asp-for="ImageName" class="form-control" />
+                <span asp-validation-for="ImageName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="button">
+               
+                <input id="button"type="submit" value="Create" class="btn btn-primary" />
+               
+            </div>
+        </form>
+    </div>
+</div>
+ <a asp-action="Index">Volver a la lista</a>
+</div>
+
+<div>
+   
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
+
+<style>
+    #formulario{
+   
+    height: 480px; 
+     width: 500px;
+     background-color: white;
+     justify-content: center;
+     padding: 0 20px;
+     border-radius: 15px;
+     background-color: rgba(241, 184, 26, 0.397);
+     }
+
+.button {
+    
+       width: 100%; /* Asegura que el contenedor ocupa todo el ancho disponible */
+    text-align: center; /* Centra el contenido horizontalmente */
+
+}
+
+
+    body{
+       width: 100%;
+ 
+   background-image: url(https://steamuserimages-a.akamaihd.net/ugc/264979370756457663/3A722C67D1913541ABB669B0206A6D77C5620E7C/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover
+  
+   
+   
+}
+
+h1{
+    text-align: center;
+    color: yellow;
+}
+
+
+
+ #contenedor{
+          width: 40%;
+  margin: 0 auto;
+
+    }
+    .form-group{
+    height: 70px;
+    width: 450px;
+
+}
+
+</style>
+
+ 
+    
+   
+    

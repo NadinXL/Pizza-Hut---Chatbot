@@ -1,0 +1,131 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+<body>
+    
+
+<div >
+<div class="row">
+    
+    <div class="col-md-3">
+        <section >
+            <form id="formulario" id="account" method="post">
+                <h1 style="text-align: center;">@ViewData["Title"]</h1>
+                <h2 style="text-align:center; font-size: 20px;">Utilice una cuenta local para iniciar sesión...</h2>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-2">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                    <label asp-for="Input.Email" class="form-label">Email</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-2">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                    <label asp-for="Input.Password" class="form-label">Contraseña</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="checkbox mb-2">
+                    <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                    </label>
+                </div>
+                <div>
+                    <button style="background-color: rgb(134, 173, 175); border: red;" id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Acceder</button>
+                </div>
+                <br>
+                <div class="pass">
+                    <p >
+                        <a id="forgot-password" asp-page="./ForgotPassword">Te olvidaste tu contraseña?</a>
+                    </p>
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registrarse como nuevo usuario</a>
+                    </p>
+                    <p>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Reenviar confirmación por correo electrónico</a>
+                    </p>
+                </div>
+                 
+            </form>
+            
+            </div>
+            
+        </section>
+    
+    </div>
+</div>
+ 
+        <section style="margin-top: 700px;">
+            <h3 style="text-align: center;">Utilice otro servicio para iniciar sesión.</h3>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            No hay servicios de autenticación externos configurados. Mira esto <a href="https://go.microsoft.com/fwlink/?LinkID=532715">artículo sobre la configuración de esta aplicación ASP.NET para 
+                            admitir el inicio de sesión a través de servicios externos</a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>
+
+
+</body>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<style>
+    body{
+
+   background: linear-gradient(to right, #a9cad1, rgb(6, 49, 97));
+
+    }
+    #formulario{
+     position: absolute;
+     top: 45%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 450px;
+     background-color: white;
+     justify-content: center;
+     padding: 0 20px;
+     border-radius: 15px;
+     background-color: rgba(255, 255, 255, 0.7);
+
+    }
+    .pass{
+        text-align: center;
+    }
+   .abajo{
+    position: fixed;
+    width: 100%; 
+    height: 100%;
+   }
+  
+
+ 
+
+
+</style>

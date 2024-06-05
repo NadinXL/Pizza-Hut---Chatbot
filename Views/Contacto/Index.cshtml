@@ -1,0 +1,118 @@
+@model Contacto
+
+ 
+
+@{
+
+    ViewData["Title"] = "CONTACTANOS";
+
+}
+
+<h1>@ViewData["Title"]</h1>
+
+ 
+
+    
+<body>
+<div id="contenedor" class="text-left">
+
+<form action="https://formsubmit.co/panconkeso.alone@gmail.com" method="POST">
+<br>
+        <div class="form-group">
+
+            <label asp-for="Name">Nombre:</label>
+
+            <input asp-for="Name" name="name" class="form-control" />
+
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Email">Email:</label>
+
+            <input asp-for="Email" name="email" class="form-control" />
+
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Phone">Teléfono:</label>
+
+            <input asp-for="Phone" name="phone" class="form-control" />
+
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Question">Pregunta:</label>
+
+            <input asp-for="Question" name="subject" class="form-control" />
+
+
+        </div>
+
+<button style="background: rgb(192, 163, 110); border: red;"type="submit" class="btn btn-primary">Enviar Consulta</button>
+        
+
+    </form>
+
+
+    
+
+</div>
+</body>  
+<style>
+
+button{
+    width: 150px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+    #contenedor{
+          width: 40%;
+  margin: 0 auto;
+
+    }
+.form-group{
+    height: 100px;
+    width: 450px;
+
+}
+  body {
+
+width: 100%;
+   background-color: #5e7bf9;
+   background-image: url(https://i.pinimg.com/originals/b3/ed/5e/b3ed5e41719a6258d001fbb8944a503c.gif);
+   background-position: right ;
+   background-repeat: no-repeat;
+   background-size: 45%;
+   
+   
+    
+  
+  }
+ h1{
+    color: white;
+    text-align: center;
+ }
+
+ label{
+    color: white;
+ }
+ 
+  #formulario{
+    height: 480px;
+     position: absolute;
+     top: 50%;
+     right: 50%;
+     transform: translate(-10%, -50%);
+     width: 500px;
+     background-color: white;
+     justify-content: center;
+     padding: 0 20px;
+     border-radius: 15px;
+     background-color: rgba(241, 184, 26, 0.397);
+     }
+
+</style>

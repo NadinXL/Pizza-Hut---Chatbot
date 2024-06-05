@@ -1,0 +1,101 @@
+@model IEnumerable<GameCursos.Models.Producto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>PRODUCTOS</h1>
+<div class="tabla-contenedor">
+<p>
+    <a asp-action="Create">Crear Nuevo producto</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PorcentajeDescuento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PorcentajeDescuento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+    
+</table>
+</div>
+
+<style>
+    body{
+        background-color: #9FEFE5;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Establece el tamaño del fondo para que cubra toda la pantalla */
+    }
+
+    h1{
+       color: black;
+    text-align: center;
+    }
+
+    th{
+        color:green
+    }
+
+    a{
+        color:red
+    }
+
+.tabla-contenedor {
+      width: 113%; /* Define el ancho del contenedor */
+      margin: 0 auto; /* Centra el contenedor en la página */
+     background-color: rgba(220, 255, 255, 0.9);
+      padding: 20px; /* Espacio interno alrededor del contenedor */
+      border-radius: 15px;
+    }
+
+</style>
