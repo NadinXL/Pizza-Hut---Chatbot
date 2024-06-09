@@ -44,14 +44,24 @@
 
         <div class="form-group">
 
-            <label asp-for="Question">Pregunta:</label>
+            <label asp-for="Question">Direccion:</label>
 
             <input asp-for="Question" name="subject" class="form-control" />
+    </div>
+
+        <div class="form-group">
+
+            <label asp-for="Question">Asunto:</label>
+
+            <input asp-for="Question" name="subject" class="form-control" />
+    </div>
 
 
-        </div>
 
-<button style="background: rgb(192, 163, 110); border: red;"type="submit" class="btn btn-primary">Enviar Consulta</button>
+        
+
+
+<button style="background: blue; border: red;"type="submit" class="btn btn-primary">Envia tu Comentario</button>
         
 
     </form>
@@ -64,9 +74,10 @@
 <style>
 
 button{
-    width: 150px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+    width: 170px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
   margin-left: 50%;
   transform: translateX(-50%);
+  
 }
 
     #contenedor{
@@ -81,24 +92,24 @@ button{
 }
   body {
 
-width: 100%;
-   background-color: #5e7bf9;
-   background-image: url(https://i.pinimg.com/originals/b3/ed/5e/b3ed5e41719a6258d001fbb8944a503c.gif);
-   background-position: right ;
+    width: 100%;
+    
+   background-image: url(https://images-stag.jazelc.com/uploads/karlklementforddecatur-m2en/Pizza-near-Decatur.jpeg);
+   background-position: center;
    background-repeat: no-repeat;
-   background-size: 45%;
+   background-size: 100%;
    
    
     
   
   }
  h1{
-    color: white;
+    color: red;
     text-align: center;
  }
 
  label{
-    color: white;
+    color: 	white;
  }
  
   #formulario{
@@ -115,4 +126,5 @@ width: 100%;
      background-color: rgba(241, 184, 26, 0.397);
      }
 
+ 
 </style>

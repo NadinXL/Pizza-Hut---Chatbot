@@ -15,17 +15,29 @@
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
                 <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email">Email</label>
+                <label asp-for="Input.Email">Nombre</label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
                 <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.Password">Password</label>
+                <label asp-for="Input.Password">Apellido</label>
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
                 <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.ConfirmPassword">Confirmar Contraseña</label>
+                <label asp-for="Input.ConfirmPassword">Correo Electronico</label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.ConfirmPassword">Contraseña</label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+
+             <div class="form-floating mb-3">
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.ConfirmPassword">Numero de Telefono</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Registrarse</button>
@@ -36,17 +48,12 @@
 <br>
     <div class="col-md-12 col-md-offset-2" id="titulo3">
         <section style="margin-top: 50px;">
-            <h3 id="titulo2">Utilice otro servicio para registrarse</h3>
+            
             <hr />
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {
-                    <div>
-                        <p>
-                            No hay servicios de autenticación externos configurados. Mira esto <a href="https://go.microsoft.com/fwlink/?LinkID=532715">artículo
-                            acerca de la configuración de esta aplicación ASP.NET para admitir el inicio de sesión a través de servicios externos</a>.
-                        </p>
-                    </div>
+
                 }
                 else
                 {
@@ -72,14 +79,18 @@
 
 <style>
 body{
-    background-image: url(https://img.freepik.com/foto-gratis/acantilados-cuevas-desierto-lleno-pasto-seco-cielo-nublado-dia_181624-27961.jpg);
-    background-size: cover;
+   
+    background-image: url(https://x96.com/wp-content/uploads/2017/03/pizza.png);
+    background-position: center;
+   background-repeat: no-repeat;
+   background-size: 100%;
+   
 
 }
 
 
 #titulo{
-    color:yellow;
+    color:green;
     text-align: center;
 }
 

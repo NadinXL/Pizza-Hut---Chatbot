@@ -1,57 +1,100 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
-    <body>
+<body>
 
-<div class="text-center">
-    <strong>
-    <h1 strclass="display-4">BIENVENIDOS A PIZZA HUTT</h1>
-   </strong>
-   <strong>
-    <h2>No hay nada mejor que una pizza de Pizza Hut</h2>
-    </strong>
+    <div class="text-center">
+        <strong>
+            <h1 strclass="display-4">BIENVENIDOS A PIZZA HUTT</h1>
+        </strong>
+        <strong>
+            <h2>"Compartiendo momentos deliciosos en Pizza Hutt"</h2>
+        </strong>
+        <div class="chatbot-toggle">
+            <button id="chatbot-button">Abrir Chatbot</button>
+        </div>
 
-   
-      
-    </div>
-    
-</div>
-<div class="right-iframe">
-        <iframe
-            permitir="micrófono;"
-            width="350"
-            height="430"
-            src="https://console.dialogflow.com/api-client/demo/embedded/bdb607d3-0432-4ae4-933a-bb83f40e0293">
-        </iframe>
+        <!-- Contenedor para el chatbot -->
+        <div id="chatbot-container" style="display: none;">
+            <iframe id="chatbot-iframe" width="350" height="430"
+                src="https://console.dialogflow.com/api-client/demo/embedded/bdb607d3-0432-4ae4-933a-bb83f40e0293"></iframe>
+        </div>
+
     </div>
 
+
+
+
+
+
+    <!-- Otro contenido de tu página -->
+
+    <!-- Script de JavaScript -->
+    <script>
+        document.getElementById('chatbot-button').addEventListener('click', function () {
+            var chatbotContainer = document.getElementById('chatbot-container');
+            var chatbotButton = document.getElementById('chatbot-button');
+
+            // Si el contenedor del chatbot está visible, lo oculta y cambia el texto del botón a "Abrir Chatbot"
+            if (chatbotContainer.style.display === 'block') {
+                chatbotContainer.style.display = 'none';
+                chatbotButton.textContent = 'Abrir Chatbot';
+            } else {
+                // Si el contenedor del chatbot está oculto, lo muestra y cambia el texto del botón a "Cerrar Chatbot"
+                chatbotContainer.style.display = 'block';
+                chatbotButton.textContent = 'Cerrar Chatbot';
+            }
+        });
+    </script>
 </body>
 
 
 <style>
- 
-body{
-  
-   width: 100%;
-   background-image: url(https://scontent.flim13-1.fna.fbcdn.net/v/t1.6435-9/93234292_3713879778653526_2698001539410165760_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeG04ieR4oH5MThF5CBsnbOdGm_6D0CMr74ab_oPQIyvvl5y8MsZPrPFCFOFkx1rBcygkKA4LTBfrZmknVvikXbb&_nc_ohc=4NSXlHOD9mUQ7kNvgGE1QUt&_nc_ht=scontent.flim13-1.fna&oh=00_AYCxmtVkxz-RYIiuccBhHQXw45HUvbToD3NB4hKIg1safw&oe=6685EB65);
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: 150%;
-   
-}
-  
- h1{
-    color: black;
-    
- }
- 
- h2{
-    color: green;
-    line-height: 310px;
- }
+    body {
+
+        width: 100%;
+        background-color: black;
+        background-image: url(https://logos-marcas.com/wp-content/uploads/2021/10/Pizza-Hut-Simbolo.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:50%;
+
+    }
+
+    .chatbot-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+     #chatbot-button {
+        background-color: #ff6347; /* Color de fondo naranja */
+        color: #fff; /* Color de texto blanco */
+        border: none;
+        border-radius: 25px; /* Forma elíptica */
+        width: 200px; /* Ancho del botón */
+        height: 60px; /* Altura del botón */
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px rgba(255, 99, 71, 0.5); /* Sombra */
+        transition: transform 0.3s ease; /* Transición suave */
+    }
+
+       #chatbot-button:hover {
+        transform: scale(1.05); /* Escala ligeramente cuando se pasa el ratón por encima */
+    }
 
 
 
+    h1 {
+        color: orange;
+
+    }
+
+    h2 {
+        color: yellow;
+        line-height: 310px;
+    }
 </style>
